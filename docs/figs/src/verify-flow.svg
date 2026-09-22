@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <marker id="ar4" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#7C86B8"/>
+    </marker>
+    <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1E2A50" flood-color-opacity="0.1" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="700" fill="#FFFFFF"/>
+
+  <text x="40" y="46" font-size="21" font-weight="700" fill="#1B2340">凭证存证与验真的完整链路</text>
+  <text x="40" y="72" font-size="13" fill="#7A839A">上半部分是「发行方怎么把凭证钉到链上」，下半部分是「外人怎么在不知道内情的前提下验真」</text>
+
+  <!-- ============= 上半：铸造 ============= -->
+  <text x="40" y="112" font-size="14" font-weight="700" fill="#4F46E5">一、铸造：把凭证钉到链上（服务端）</text>
+
+  <g filter="url(#f1)">
+    <rect x="40" y="130" width="212" height="112" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="276" y="130" width="212" height="112" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="512" y="130" width="212" height="112" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="748" y="130" width="212" height="112" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="984" y="130" width="176" height="112" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+
+  <circle cx="72" cy="158" r="13" fill="#5B6CFF"/>
+  <text x="72" y="163" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="96" y="163" font-size="13" font-weight="700" fill="#1B2340">校验资格</text>
+  <text x="62" y="192" font-size="11.5" fill="#6C7590">条件表达式在规则表里配置：</text>
+  <text x="62" y="211" font-size="11.5" fill="#6C7590">连续天数 / 累计得分 / 全清天数</text>
+  <text x="62" y="230" font-size="11.5" fill="#6C7590">逐条回源统计，不用缓存值蒙</text>
+
+  <circle cx="308" cy="158" r="13" fill="#5B6CFF"/>
+  <text x="308" y="163" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="332" y="163" font-size="13" font-weight="700" fill="#1B2340">扣分并铸交易</text>
+  <text x="298" y="192" font-size="11.5" fill="#6C7590">用用户私钥对 BADGE_MINT</text>
+  <text x="298" y="211" font-size="11.5" fill="#6C7590">交易签名，金额为徽章定价</text>
+  <text x="298" y="230" font-size="11.5" fill="#6C7590">交易号 = 交易内容的 SHA-256</text>
+
+  <circle cx="544" cy="158" r="13" fill="#5B6CFF"/>
+  <text x="544" y="163" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="568" y="163" font-size="13" font-weight="700" fill="#1B2340">进池并出块</text>
+  <text x="534" y="192" font-size="11.5" fill="#6C7590">交易先进交易池，攒到 25 笔</text>
+  <text x="534" y="211" font-size="11.5" fill="#6C7590">或超时兜底触发出块</text>
+  <text x="534" y="230" font-size="11.5" fill="#6C7590">PoW 挖到满足难度为止</text>
+
+  <circle cx="780" cy="158" r="13" fill="#5B6CFF"/>
+  <text x="780" y="163" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="804" y="163" font-size="13" font-weight="700" fill="#1B2340">生成 Merkle 证明</text>
+  <text x="770" y="192" font-size="11.5" fill="#6C7590">算出该交易到 Merkle 根的</text>
+  <text x="770" y="211" font-size="11.5" fill="#6C7590">兄弟节点路径，存进凭证行</text>
+  <text x="770" y="230" font-size="11.5" fill="#6C7590">路径长度 ≈ log₂(块内交易数)</text>
+
+  <circle cx="1016" cy="158" r="13" fill="#8B5CF6"/>
+  <text x="1016" y="163" font-size="12.5" font-weight="700" fill="#FFFFFF" text-anchor="middle">5</text>
+  <text x="1040" y="163" font-size="13" font-weight="700" fill="#1B2340">发证</text>
+  <text x="1006" y="192" font-size="11.5" fill="#6C7590">序列号 ZJ-XXXX-XXXX-</text>
+  <text x="1006" y="211" font-size="11.5" fill="#6C7590">XXXX，附验真码与二维码</text>
+  <text x="1006" y="230" font-size="11.5" fill="#6C7590">凭证可撤销，撤销要写理由</text>
+
+  <g stroke="#7C86B8" stroke-width="1.8" marker-end="url(#ar4)">
+    <line x1="252" y1="186" x2="270" y2="186"/>
+    <line x1="488" y1="186" x2="506" y2="186"/>
+    <line x1="724" y1="186" x2="742" y2="186"/>
+    <line x1="960" y1="186" x2="978" y2="186"/>
+  </g>
+
+  <!-- 分界 -->
+  <line x1="40" y1="280" x2="1160" y2="280" stroke="#E3E6F5" stroke-width="1.6" stroke-dasharray="6 5"/>
+
+  <!-- ============= 下半：验真 ============= -->
+  <text x="40" y="316" font-size="14" font-weight="700" fill="#4F46E5">二、验真：外人在浏览器里自己算一遍（不信任服务端结论）</text>
+
+  <g filter="url(#f1)">
+    <rect x="40" y="336" width="352" height="176" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="424" y="336" width="352" height="176" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="808" y="336" width="352" height="176" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+
+  <text x="64" y="366" font-size="13.5" font-weight="700" fill="#1B2340">① 业务库核对</text>
+  <text x="64" y="392" font-size="11.5" fill="#6C7590">用验真码查到凭证行，确认它存在、</text>
+  <text x="64" y="411" font-size="11.5" fill="#6C7590">归属确实、序列号未重复。</text>
+  <text x="64" y="440" font-size="11.5" fill="#6C7590">同时读出该凭证的链上交易号与</text>
+  <text x="64" y="459" font-size="11.5" fill="#6C7590">已存好的 Merkle 兄弟路径。</text>
+  <text x="64" y="490" font-size="11" fill="#8A93AB">这一步只能说明「库里这么写的」</text>
+
+  <text x="448" y="366" font-size="13.5" font-weight="700" fill="#1B2340">② 状态核对</text>
+  <text x="448" y="392" font-size="11.5" fill="#6C7590">读凭证状态字段：有效 / 已撤销。</text>
+  <text x="448" y="411" font-size="11.5" fill="#6C7590">撤销时把撤销理由与时间一并展示。</text>
+  <text x="448" y="440" font-size="11.5" fill="#6C7590">关键：撤销不等于「查无此证」——</text>
+  <text x="448" y="459" font-size="11.5" fill="#6C7590">链上交易依然存在且可被验证。</text>
+  <text x="448" y="490" font-size="11" fill="#8A93AB">这样撤销后的凭证也不会被当成伪造</text>
+
+  <text x="832" y="366" font-size="13.5" font-weight="700" fill="#1B2340">③ 链上核对 + ④ 本地重算</text>
+  <text x="832" y="392" font-size="11.5" fill="#6C7590">先确认该交易号确实被某个区块收录，</text>
+  <text x="832" y="411" font-size="11.5" fill="#6C7590">再取出块头里的 Merkle 根。</text>
+  <text x="832" y="440" font-size="11.5" fill="#B45309">然后浏览器用 WebCrypto，把「交易号 +</text>
+  <text x="832" y="459" font-size="11.5" fill="#B45309">兄弟路径」自己逐层哈希到根，</text>
+  <text x="832" y="478" font-size="11.5" fill="#B45309">比对是否等于块头记录的那个根。</text>
+  <text x="832" y="500" font-size="11" fill="#067A5B">相等 → 凭证真的在那条链里，未被篡改</text>
+
+  <!-- 底部结论条 -->
+  <rect x="40" y="536" width="1120" height="64" rx="12" fill="#EEF0FF" stroke="#C9CFFA"/>
+  <text x="64" y="562" font-size="12.5" font-weight="700" fill="#4338CA">为什么第 ④ 步要放在浏览器里做</text>
+  <text x="64" y="584" font-size="11.5" fill="#5B62A8">如果验真结论只由服务端返回，那服务端自己就能伪造一个「有效」；把这一步挪到浏览器，验真结论就不再依赖对平台方的信任 —— 这正是区块链在这个题目里的意义：不是把数据存两份，而是让「存量」这件事可被外部独立核验。</text>
+
+  <!-- 截图位提示 -->
+  <rect x="40" y="620" width="1120" height="52" rx="12" fill="#F7F8FD" stroke="#E3E6F5"/>
+  <text x="64" y="642" font-size="12" font-weight="700" fill="#4F46E5">配套实验截图</text>
+  <text x="64" y="662" font-size="11.5" fill="#6C7590">图 6-5 有效凭证（四步全绿）　·　图 6-6 已撤销凭证（链上交易仍可验证）　·　图 6-7 篡改实验室（改一笔后当场被抓住并定位到具体块高）</text>
+</svg>

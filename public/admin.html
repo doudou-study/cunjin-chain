@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>运营管理端 · 寸进链</title>
+<meta name="description" content="规则配置、奖励上下架、风控处置、链路运维、三方对账。管理端的每个动作都留痕，涉及规则与积分的动作还会上链。">
+<meta name="theme-color" content="#F5F6FB">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%234A56E0'/%3E%3Cpath d='M9 23V13M16 23V9M23 23v-6' stroke='%23fff' stroke-width='2.6' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+
+<div id="gate" class="adm-gate hide"></div>
+
+<div id="shell" class="adm hide">
+  <aside class="adm-side">
+    <a class="adm-brand" href="#/overview" style="color:inherit">
+      <span class="brand-mark">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v18M5 8l7-5 7 5M5 16l7 5 7-5"/></svg>
+      </span>
+      <span class="adm-brand-t">寸进链<span class="adm-brand-s">运营管理端</span></span>
+    </a>
+    <nav class="adm-nav" id="navlink" aria-label="管理端导航"></nav>
+    <div class="adm-side-f">
+      <div id="uchip" style="margin-bottom:8px"></div>
+      <a class="btn sm block" href="/" target="_blank" rel="noopener">打开用户端</a>
+      <a class="btn sm block mt3" href="/chain" target="_blank" rel="noopener">打开链浏览器</a>
+    </div>
+  </aside>
+
+  <main class="adm-main">
+    <div class="adm-crumb" id="crumb"></div>
+    <div class="adm-head">
+      <div>
+        <h1 id="title">概览</h1>
+        <div class="adm-sub" id="subtitle"></div>
+      </div>
+      <div class="adm-acts" id="acts"></div>
+    </div>
+    <div id="view" role="main"></div>
+  </main>
+</div>
+
+<script type="module" src="/js/admin.js"></script>
+</body>
+</html>

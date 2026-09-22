@@ -1,0 +1,22 @@
+{
+  "name": "cunjin-chain",
+  "version": "1.0.0",
+  "private": true,
+  "description": "寸进链 · 每日打卡积分与链上成就存证平台（区块链 + Node/Express + MySQL）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "db:init": "node tools/db-init.js",
+    "seed": "node tools/seed.js",
+    "qa": "node tools/qa.js",
+    "shots": "node tools/shots.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mysql2": "^3.11.0",
+    "qrcode": "^1.5.4"
+  }
+}

@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 780" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <linearGradient id="gBrand" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5B6CFF"/><stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="sh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1E2A50" flood-opacity="0.10"/>
+    </filter>
+    <filter id="sh2" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#1E2A50" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="780" fill="#FFFFFF"/>
+
+  <!-- 标题 -->
+  <text x="40" y="46" font-size="21" font-weight="700" fill="#1B2340">寸进链 · 系统总体架构</text>
+  <text x="40" y="72" font-size="13" fill="#7A839A">四端一体：业务数据在关系库存一份，关键动作同步在链上存证一份，两套账互相校验</text>
+
+  <!-- ============ L1 用户与访问层 ============ -->
+  <rect x="40" y="96" width="1120" height="128" rx="16" fill="#F7F8FD" stroke="#E3E6F5"/>
+  <text x="62" y="126" font-size="13.5" font-weight="700" fill="#4F46E5">用户与访问层</text>
+  <text x="62" y="146" font-size="11" fill="#8A93AB">Web 前端</text>
+
+  <g filter="url(#sh)">
+    <rect x="170" y="112" width="230" height="94" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+  <rect x="170" y="112" width="4" height="94" rx="2" fill="url(#gBrand)"/>
+  <text x="192" y="146" font-size="15" font-weight="700" fill="#1B2340">学习者端</text>
+  <text x="192" y="170" font-size="11.5" fill="#6C7590">打卡 · 任务 · 积分账户</text>
+  <text x="192" y="190" font-size="11.5" fill="#6C7590">徽章墙 · 商城 · 押注 · 自习室</text>
+
+  <g filter="url(#sh)">
+    <rect x="416" y="112" width="230" height="94" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+  <rect x="416" y="112" width="4" height="94" rx="2" fill="url(#gBrand)"/>
+  <text x="438" y="146" font-size="15" font-weight="700" fill="#1B2340">链浏览器</text>
+  <text x="438" y="170" font-size="11.5" fill="#6C7590">区块 / 交易 / 地址查询</text>
+  <text x="438" y="190" font-size="11.5" fill="#6C7590">Merkle 轻验证 · 篡改实验室</text>
+
+  <g filter="url(#sh)">
+    <rect x="662" y="112" width="230" height="94" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+  <rect x="662" y="112" width="4" height="94" rx="2" fill="url(#gBrand)"/>
+  <text x="684" y="146" font-size="15" font-weight="700" fill="#1B2340">运营管理端</text>
+  <text x="684" y="170" font-size="11.5" fill="#6C7590">规则 · 奖励 · 看板 · 风控</text>
+  <text x="684" y="190" font-size="11.5" fill="#6C7590">对账 · 公告 · 审计 · 出块运维</text>
+
+  <g filter="url(#sh)">
+    <rect x="908" y="112" width="230" height="94" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+  <rect x="908" y="112" width="4" height="94" rx="2" fill="#F59E0B"/>
+  <text x="930" y="146" font-size="15" font-weight="700" fill="#1B2340">凭证验真页</text>
+  <text x="930" y="170" font-size="11.5" fill="#6C7590">免登录 · 扫码即可验</text>
+  <text x="930" y="190" font-size="11.5" fill="#6C7590">浏览器本地重算 Merkle</text>
+
+  <!-- ============ L2 接入与鉴权层 ============ -->
+  <rect x="40" y="240" width="1120" height="86" rx="16" fill="#F7F8FD" stroke="#E3E6F5"/>
+  <text x="62" y="270" font-size="13.5" font-weight="700" fill="#4F46E5">接入与鉴权层</text>
+  <text x="62" y="290" font-size="11" fill="#8A93AB">Node.js</text>
+
+  <g filter="url(#sh)">
+    <rect x="170" y="254" width="268" height="58" rx="11" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="454" y="254" width="268" height="58" rx="11" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="738" y="254" width="400" height="58" rx="11" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+  <text x="192" y="280" font-size="13.5" font-weight="600" fill="#1B2340">HTTP 路由分发</text>
+  <text x="192" y="300" font-size="11" fill="#8A93AB">api / chainapi / adminapi</text>
+  <text x="476" y="280" font-size="13.5" font-weight="600" fill="#1B2340">HMAC-SHA256 令牌鉴权</text>
+  <text x="476" y="300" font-size="11" fill="#8A93AB">无 session 表 · 重启不掉线</text>
+  <text x="760" y="280" font-size="13.5" font-weight="600" fill="#1B2340">静态资源与页面托管</text>
+  <text x="760" y="300" font-size="11" fill="#8A93AB">零 CDN 依赖，全部本地化</text>
+
+  <!-- ============ L3 业务引擎层 ============ -->
+  <rect x="40" y="350" width="1120" height="150" rx="16" fill="#F7F8FD" stroke="#E3E6F5"/>
+  <text x="62" y="380" font-size="13.5" font-weight="700" fill="#4F46E5">业务引擎层</text>
+  <text x="62" y="400" font-size="11" fill="#8A93AB">lib/*.js</text>
+
+  <g filter="url(#sh)">
+    <rect x="170" y="366" width="212" height="118" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="394" y="366" width="212" height="118" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="618" y="366" width="212" height="118" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="842" y="366" width="296" height="118" rx="12" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+  <text x="192" y="392" font-size="14" font-weight="700" fill="#1B2340">积分引擎</text>
+  <text x="192" y="416" font-size="11" fill="#6C7590">签到连续加成 · 任务计分</text>
+  <text x="192" y="435" font-size="11" fill="#6C7590">全清奖励 · 等级刷新</text>
+  <text x="192" y="454" font-size="11" fill="#6C7590">流水入账 + 链上转账同事务</text>
+  <text x="192" y="473" font-size="11" fill="#0F9D6E">lib/points.js</text>
+
+  <text x="416" y="392" font-size="14" font-weight="700" fill="#1B2340">成就与凭证</text>
+  <text x="416" y="416" font-size="11" fill="#6C7590">徽章铸造 · 序列号编码</text>
+  <text x="416" y="435" font-size="11" fill="#6C7590">验真码 · 撤销与理由留痕</text>
+  <text x="416" y="454" font-size="11" fill="#6C7590">Merkle 证明随凭证签发</text>
+  <text x="416" y="473" font-size="11" fill="#0F9D6E">lib/points.js</text>
+
+  <text x="640" y="392" font-size="14" font-weight="700" fill="#1B2340">商城 · 押注 · 公益</text>
+  <text x="640" y="416" font-size="11" fill="#6C7590">兑换扣分与库存扣减</text>
+  <text x="640" y="435" font-size="11" fill="#6C7590">押注冻结 / 达成双倍返还</text>
+  <text x="640" y="454" font-size="11" fill="#6C7590">捐赠入奖池与公益账户</text>
+  <text x="640" y="473" font-size="11" fill="#0F9D6E">lib/points.js</text>
+
+  <text x="864" y="392" font-size="14" font-weight="700" fill="#1B2340">风控与对账</text>
+  <text x="864" y="416" font-size="11" fill="#6C7590">5 条刷分规则，命中即生成工单</text>
+  <text x="864" y="435" font-size="11" fill="#6C7590">每笔都带证据（间隔 / 设备 / 次数）</text>
+  <text x="864" y="454" font-size="11" fill="#6C7590">三方对账：流水 = 台账 = 链上余额</text>
+  <text x="864" y="473" font-size="11" fill="#0F9D6E">lib/risk.js</text>
+
+  <!-- ============ L4 区块链内核层（高亮） ============ -->
+  <rect x="40" y="520" width="1120" height="130" rx="16" fill="#EEF0FF" stroke="#C9CFFA"/>
+  <text x="62" y="550" font-size="13.5" font-weight="700" fill="#4338CA">区块链内核层</text>
+  <text x="62" y="570" font-size="11" fill="#7C86B8">lib/chain.js</text>
+
+  <g filter="url(#sh2)">
+    <rect x="170" y="536" width="180" height="98" rx="12" fill="#FFFFFF" stroke="#C9CFFA"/>
+    <rect x="362" y="536" width="180" height="98" rx="12" fill="#FFFFFF" stroke="#C9CFFA"/>
+    <rect x="554" y="536" width="180" height="98" rx="12" fill="#FFFFFF" stroke="#C9CFFA"/>
+    <rect x="746" y="536" width="180" height="98" rx="12" fill="#FFFFFF" stroke="#C9CFFA"/>
+    <rect x="938" y="536" width="200" height="98" rx="12" fill="#FFFFFF" stroke="#C9CFFA"/>
+  </g>
+  <text x="190" y="562" font-size="13" font-weight="700" fill="#1B2340">Ed25519 签名</text>
+  <text x="190" y="584" font-size="10.5" fill="#6C7590">每笔交易私钥签名</text>
+  <text x="190" y="601" font-size="10.5" fill="#6C7590">公钥可从私钥推导</text>
+  <text x="190" y="621" font-size="10.5" fill="#4338CA">验签失败即拒收</text>
+
+  <text x="382" y="562" font-size="13" font-weight="700" fill="#1B2340">Merkle 树</text>
+  <text x="382" y="584" font-size="10.5" fill="#6C7590">叶子 = 交易号</text>
+  <text x="382" y="601" font-size="10.5" fill="#6C7590">奇数节点自复制</text>
+  <text x="382" y="621" font-size="10.5" fill="#4338CA">可生成 O(log n) 证明</text>
+
+  <text x="574" y="562" font-size="13" font-weight="700" fill="#1B2340">PoW 工作量证明</text>
+  <text x="574" y="584" font-size="10.5" fill="#6C7590">难度 4 → 前导 4 个 0</text>
+  <text x="574" y="601" font-size="10.5" fill="#6C7590">难度可运行时调整</text>
+  <text x="574" y="621" font-size="10.5" fill="#4338CA">改历史必须重挖</text>
+
+  <text x="766" y="562" font-size="13" font-weight="700" fill="#1B2340">链式哈希</text>
+  <text x="766" y="584" font-size="10.5" fill="#6C7590">块头含前块哈希</text>
+  <text x="766" y="601" font-size="10.5" fill="#6C7590">SHA-256 逐块串起</text>
+  <text x="766" y="621" font-size="10.5" fill="#4338CA">改一块则后续全断</text>
+
+  <text x="958" y="562" font-size="13" font-weight="700" fill="#1B2340">校验与篡改定位</text>
+  <text x="958" y="584" font-size="10.5" fill="#6C7590">逐块重算：哈希 / 根 / 难度</text>
+  <text x="958" y="601" font-size="10.5" fill="#6C7590">逐笔重新验签</text>
+  <text x="958" y="621" font-size="10.5" fill="#4338CA">返回首个出错块高度</text>
+
+  <!-- ============ L5 数据持久层 ============ -->
+  <rect x="40" y="664" width="1120" height="86" rx="16" fill="#F7F8FD" stroke="#E3E6F5"/>
+  <text x="62" y="694" font-size="13.5" font-weight="700" fill="#4F46E5">数据持久层</text>
+  <text x="62" y="714" font-size="11" fill="#8A93AB">MySQL 5.7</text>
+
+  <g filter="url(#sh)">
+    <rect x="170" y="678" width="268" height="58" rx="11" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="454" y="678" width="268" height="58" rx="11" fill="#FFFFFF" stroke="#DDE1F0"/>
+    <rect x="738" y="678" width="400" height="58" rx="11" fill="#FFFFFF" stroke="#DDE1F0"/>
+  </g>
+  <text x="192" y="704" font-size="13.5" font-weight="600" fill="#1B2340">23 张业务表</text>
+  <text x="192" y="724" font-size="11" fill="#8A93AB">310 字段 · 83 索引 · 13 外键</text>
+  <text x="476" y="704" font-size="13.5" font-weight="600" fill="#1B2340">区块表 + 交易表</text>
+  <text x="476" y="724" font-size="11" fill="#8A93AB">链的持久化副本，可整链重算</text>
+  <text x="760" y="704" font-size="13.5" font-weight="600" fill="#1B2340">Ed25519 密钥柜</text>
+  <text x="760" y="724" font-size="11" fill="#8A93AB">系统账户密钥落盘，重启后历史签名仍可验</text>
+
+  <!-- 层间箭头 -->
+  <defs>
+    <marker id="ar" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+      <path d="M0,0 L9,4.5 L0,9 z" fill="#9AA3C0"/>
+    </marker>
+  </defs>
+  <g stroke="#9AA3C0" stroke-width="1.6" marker-end="url(#ar)">
+    <line x1="600" y1="228" x2="600" y2="248"/>
+    <line x1="600" y1="334" x2="600" y2="358"/>
+    <line x1="600" y1="508" x2="600" y2="528"/>
+    <line x1="600" y1="658" x2="600" y2="672"/>
+  </g>
+</svg>

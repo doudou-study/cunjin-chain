@@ -1,0 +1,136 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 946" font-family="Microsoft YaHei, PingFang SC, sans-serif">
+  <defs>
+    <linearGradient id="gC" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5B6CFF"/><stop offset="1" stop-color="#8B5CF6"/>
+    </linearGradient>
+    <filter id="e1" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1E2A50" flood-opacity="0.11"/>
+    </filter>
+  </defs>
+  <rect width="1080" height="946" fill="#FFFFFF"/>
+
+  <text x="40" y="44" font-size="21" font-weight="700" fill="#1B2340">数据库概念结构（E-R 图）</text>
+
+  <g stroke="#C3C9E2" stroke-width="1.8" fill="none">
+    <line x1="260" y1="442" x2="330" y2="442"/>
+    <line x1="330" y1="82" x2="330" y2="802"/>
+    <line x1="330" y1="82" x2="428" y2="82"/>
+    <line x1="476" y1="82" x2="540" y2="82"/>
+    <line x1="330" y1="226" x2="428" y2="226"/>
+    <line x1="476" y1="226" x2="540" y2="226"/>
+    <line x1="692" y1="226" x2="758" y2="226"/>
+    <line x1="806" y1="226" x2="846" y2="226"/>
+    <line x1="330" y1="370" x2="428" y2="370"/>
+    <line x1="476" y1="370" x2="540" y2="370"/>
+    <line x1="692" y1="370" x2="758" y2="370"/>
+    <line x1="806" y1="370" x2="846" y2="370"/>
+    <line x1="330" y1="514" x2="428" y2="514"/>
+    <line x1="476" y1="514" x2="540" y2="514"/>
+    <line x1="692" y1="514" x2="758" y2="514"/>
+    <line x1="806" y1="514" x2="846" y2="514"/>
+    <line x1="330" y1="658" x2="428" y2="658"/>
+    <line x1="476" y1="658" x2="540" y2="658"/>
+    <line x1="692" y1="658" x2="758" y2="658"/>
+    <line x1="806" y1="658" x2="846" y2="658"/>
+    <line x1="330" y1="802" x2="428" y2="802"/>
+    <line x1="476" y1="802" x2="540" y2="802"/>
+    <line x1="692" y1="802" x2="758" y2="802"/>
+    <line x1="806" y1="802" x2="846" y2="802"/>
+  </g>
+
+  <polygon points="428,82 452,48 476,82 452,116" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.6"/>
+  <rect x="540" y="56" width="152" height="52" rx="11" fill="#FFFFFF" stroke="#C9CFFA" stroke-width="1.6" filter="url(#e1)"/>
+  <polygon points="428,226 452,192 476,226 452,260" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.6"/>
+  <rect x="540" y="200" width="152" height="52" rx="11" fill="#FFFFFF" stroke="#C9CFFA" stroke-width="1.6" filter="url(#e1)"/>
+  <polygon points="758,226 782,192 806,226 782,260" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="846" y="201" width="150" height="50" rx="11" fill="#F4F7FE" stroke="#CBD8F0"/>
+  <polygon points="428,370 452,336 476,370 452,404" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.6"/>
+  <rect x="540" y="344" width="152" height="52" rx="11" fill="#FFFFFF" stroke="#C9CFFA" stroke-width="1.6" filter="url(#e1)"/>
+  <polygon points="758,370 782,336 806,370 782,404" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="846" y="345" width="150" height="50" rx="11" fill="#F4F7FE" stroke="#CBD8F0"/>
+  <polygon points="428,514 452,480 476,514 452,548" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.6"/>
+  <rect x="540" y="488" width="152" height="52" rx="11" fill="#FFFFFF" stroke="#C9CFFA" stroke-width="1.6" filter="url(#e1)"/>
+  <polygon points="758,514 782,480 806,514 782,548" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="846" y="489" width="150" height="50" rx="11" fill="#F4F7FE" stroke="#CBD8F0"/>
+  <polygon points="428,658 452,624 476,658 452,692" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.6"/>
+  <rect x="540" y="632" width="152" height="52" rx="11" fill="#FFFFFF" stroke="#C9CFFA" stroke-width="1.6" filter="url(#e1)"/>
+  <polygon points="758,658 782,624 806,658 782,692" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="846" y="633" width="150" height="50" rx="11" fill="#F4F7FE" stroke="#CBD8F0"/>
+  <polygon points="428,802 452,768 476,802 452,836" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.6"/>
+  <rect x="540" y="776" width="152" height="52" rx="11" fill="#FFFFFF" stroke="#C9CFFA" stroke-width="1.6" filter="url(#e1)"/>
+  <polygon points="758,802 782,768 806,802 782,836" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="1.5"/>
+  <rect x="846" y="777" width="150" height="50" rx="11" fill="#F4F7FE" stroke="#CBD8F0"/>
+  <rect x="60" y="405" width="200" height="74" rx="16" fill="url(#gC)" filter="url(#e1)"/>
+
+  <text x="295" y="430" font-size="13" text-anchor="middle" fill="#6D28D9">1</text>
+  <text x="452" y="86.5" font-size="11.5" text-anchor="middle" fill="#5B21B6">提交</text>
+  <text x="616" y="81" font-size="13" font-weight="700" text-anchor="middle" fill="#1B2340">签到记录</text>
+  <text x="616" y="98" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">checkins</text>
+  <text x="379" y="73" font-size="12.5" text-anchor="middle" fill="#6D28D9">1</text>
+  <text x="508" y="73" font-size="12.5" text-anchor="middle" fill="#6D28D9">N</text>
+  <text x="452" y="230.5" font-size="11.5" text-anchor="middle" fill="#5B21B6">记录</text>
+  <text x="616" y="225" font-size="13" font-weight="700" text-anchor="middle" fill="#1B2340">每日任务</text>
+  <text x="616" y="242" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">tasks</text>
+  <text x="379" y="217" font-size="12.5" text-anchor="middle" fill="#6D28D9">1</text>
+  <text x="508" y="217" font-size="12.5" text-anchor="middle" fill="#6D28D9">N</text>
+  <text x="782" y="230.5" font-size="10.5" text-anchor="middle" fill="#0369A1">归属</text>
+  <text x="921" y="225" font-size="12.5" font-weight="600" text-anchor="middle" fill="#1B2340">任务模板</text>
+  <text x="921" y="242" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">task_templates</text>
+  <text x="725" y="217" font-size="11.5" text-anchor="middle" fill="#0369A1">N</text>
+  <text x="826" y="217" font-size="11.5" text-anchor="middle" fill="#0369A1">1</text>
+  <text x="452" y="374.5" font-size="11.5" text-anchor="middle" fill="#5B21B6">产生</text>
+  <text x="616" y="369" font-size="13" font-weight="700" text-anchor="middle" fill="#1B2340">积分流水</text>
+  <text x="616" y="386" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">point_ledger</text>
+  <text x="379" y="361" font-size="12.5" text-anchor="middle" fill="#6D28D9">1</text>
+  <text x="508" y="361" font-size="12.5" text-anchor="middle" fill="#6D28D9">N</text>
+  <text x="782" y="374.5" font-size="10.5" text-anchor="middle" fill="#0369A1">结算</text>
+  <text x="921" y="369" font-size="12.5" font-weight="600" text-anchor="middle" fill="#1B2340">链上交易</text>
+  <text x="921" y="386" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">txs → blocks</text>
+  <text x="725" y="361" font-size="11.5" text-anchor="middle" fill="#0369A1">N</text>
+  <text x="826" y="361" font-size="11.5" text-anchor="middle" fill="#0369A1">1</text>
+  <text x="452" y="518.5" font-size="11.5" text-anchor="middle" fill="#5B21B6">铸造</text>
+  <text x="616" y="513" font-size="13" font-weight="700" text-anchor="middle" fill="#1B2340">成就凭证</text>
+  <text x="616" y="530" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">badge_claims</text>
+  <text x="379" y="505" font-size="12.5" text-anchor="middle" fill="#6D28D9">1</text>
+  <text x="508" y="505" font-size="12.5" text-anchor="middle" fill="#6D28D9">N</text>
+  <text x="782" y="518.5" font-size="10.5" text-anchor="middle" fill="#0369A1">属于</text>
+  <text x="921" y="513" font-size="12.5" font-weight="600" text-anchor="middle" fill="#1B2340">徽章定义</text>
+  <text x="921" y="530" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">badges</text>
+  <text x="725" y="505" font-size="11.5" text-anchor="middle" fill="#0369A1">N</text>
+  <text x="826" y="505" font-size="11.5" text-anchor="middle" fill="#0369A1">1</text>
+  <text x="452" y="662.5" font-size="11.5" text-anchor="middle" fill="#5B21B6">兑换</text>
+  <text x="616" y="657" font-size="13" font-weight="700" text-anchor="middle" fill="#1B2340">兑换单</text>
+  <text x="616" y="674" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">redemptions</text>
+  <text x="379" y="649" font-size="12.5" text-anchor="middle" fill="#6D28D9">1</text>
+  <text x="508" y="649" font-size="12.5" text-anchor="middle" fill="#6D28D9">N</text>
+  <text x="782" y="662.5" font-size="10.5" text-anchor="middle" fill="#0369A1">兑换</text>
+  <text x="921" y="657" font-size="12.5" font-weight="600" text-anchor="middle" fill="#1B2340">商城商品</text>
+  <text x="921" y="674" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">rewards</text>
+  <text x="725" y="649" font-size="11.5" text-anchor="middle" fill="#0369A1">N</text>
+  <text x="826" y="649" font-size="11.5" text-anchor="middle" fill="#0369A1">1</text>
+  <text x="452" y="806.5" font-size="11.5" text-anchor="middle" fill="#5B21B6">押注</text>
+  <text x="616" y="801" font-size="13" font-weight="700" text-anchor="middle" fill="#1B2340">目标押注</text>
+  <text x="616" y="818" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">stakes</text>
+  <text x="379" y="793" font-size="12.5" text-anchor="middle" fill="#6D28D9">1</text>
+  <text x="508" y="793" font-size="12.5" text-anchor="middle" fill="#6D28D9">N</text>
+  <text x="782" y="806.5" font-size="10.5" text-anchor="middle" fill="#0369A1">加入</text>
+  <text x="921" y="801" font-size="12.5" font-weight="600" text-anchor="middle" fill="#1B2340">自习室</text>
+  <text x="921" y="818" font-size="10" font-family="Consolas, monospace" text-anchor="middle" fill="#8A93AB">teams · team_members</text>
+  <text x="725" y="793" font-size="11.5" text-anchor="middle" fill="#0369A1">N</text>
+  <text x="826" y="793" font-size="11.5" text-anchor="middle" fill="#0369A1">1</text>
+  <text x="160" y="438" font-size="18" font-weight="700" text-anchor="middle" fill="#FFFFFF">用户</text>
+  <text x="160" y="463" font-size="11" font-family="Consolas, monospace" text-anchor="middle" fill="#DDE1FF">users · user_stats</text>
+
+  <rect x="40" y="858" width="1000" height="58" rx="14" fill="#F7F8FD" stroke="#E3E6F5"/>
+  <rect x="62" y="874" width="32" height="18" rx="5" fill="url(#gC)"/>
+  <text x="102" y="888" font-size="11.5" fill="#4A5470">核心实体</text>
+  <rect x="182" y="874" width="32" height="18" rx="5" fill="#FFFFFF" stroke="#C9CFFA" stroke-width="1.6"/>
+  <text x="222" y="888" font-size="11.5" fill="#4A5470">业务实体</text>
+  <rect x="302" y="874" width="32" height="18" rx="5" fill="#F4F7FE" stroke="#CBD8F0"/>
+  <text x="342" y="888" font-size="11.5" fill="#4A5470">依赖的主数据</text>
+  <polygon points="462,883 494,892 462,901 430,892" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.6"/>
+  <text x="504" y="888" font-size="11.5" fill="#4A5470">用户侧联系</text>
+  <polygon points="622,883 654,892 622,901 590,892" fill="#FFFFFF" stroke="#0EA5E9" stroke-width="1.5"/>
+  <text x="664" y="888" font-size="11.5" fill="#4A5470">主数据归属联系</text>
+  <text x="62" y="908" font-size="11" fill="#A0A8BF">1:N 一个用户对多条　M:N 多对多（自习室成员）　·　完整清单：23 张表 / 5 个视图 / 310 字段 / 83 索引 / 13 外键，见正文表 4-1</text>
+</svg>
