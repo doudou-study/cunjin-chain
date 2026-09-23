@@ -7,6 +7,8 @@
 
 [用户端](https://cunjin-chain.surge.sh/) · [链浏览器](https://cunjin-chain.surge.sh/chain) · [管理端](https://cunjin-chain.surge.sh/admin) · [凭证验真](https://cunjin-chain.surge.sh/verify)
 
+镜像站点（内容完全一致）：<https://doudou-study.github.io/cunjin-chain/>（四端路径加 `/cunjin-chain` 前缀，即 `/cunjin-chain/chain`、`/cunjin-chain/admin`、`/cunjin-chain/verify`）
+
 ---
 
 ## 这是什么
@@ -135,10 +137,34 @@ cunjin-chain/
 
 做法：先在真实 MySQL 环境下用无头浏览器把四个端实际发出的全部 `/api` 请求与响应录成快照，演示版只负责托管前端 + 回放这份快照。
 
-- `deploy-static/` —— 纯静态版，浏览器端 `demo-shim.js` 拦截 `fetch` 回放（线上跑的就是这个，任何静态托管都能用）
+- `deploy-static/` —— 纯静态版，浏览器端 `demo-shim.js` 拦截 `fetch` 回放（任何静态托管都能用）
 - `deploy-online/` —— Node 回放版，`node server.js` 即可
 
-重新生成静态包：`node tools/build-static.js`
+### 重新生成静态包
+
+源码里的资源引用是**域名根绝对路径**（`/css/app.css`、`/chain`、`location.href = '/chain#/...'`）。
+放在域名根时正确；部署在**子路径**（GitHub Pages 的项目站点）下必须补前缀，否则资源全 404、整页白屏。
+两种部署因此需要各自的构建参数：
+
+```bash
+# 域名根部署（Surge 等）—— 会写 CNAME
+node tools/build-static.js
+
+# 子路径部署（GitHub Pages）—— 站点挂在 https://<user>.github.io/<repo>/ 下
+node tools/build-static.js --base=/cunjin-chain/ --out=deploy-pages --cname=0
+```
+
+构建完会做一次**残留扫描**，把漏加前缀的站内路径打出来（非空即为有问题）。
+
+本地按子路径模拟验收：
+
+```bash
+node tools/static-preview.js --root=deploy-pages --prefix=/cunjin-chain
+DEMO_BASE=http://127.0.0.1:3903/cunjin-chain node tools/demo-verify.js
+```
+
+> `--cname=0` 不能漏：GitHub Pages 读到 CNAME 会去认领文件里写的域名（surge 的），
+> 结果 `github.io` 地址直接 404。
 
 ## 文档与视频
 
