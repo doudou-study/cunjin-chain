@@ -69,7 +69,7 @@ function paintForm(code = '') {
       <div class="adm-note mt4" style="display:flex;gap:8px;align-items:flex-start">
         <span style="flex:none">${I('info', 15)}</span>
         <div class="small">想看「改了就一定被抓」的完整演示，去
-          <a href="/chain#/lab">链浏览器 · 篡改实验室</a>，那里可以亲手改一笔链上金额再跑校验。</div>
+          <a href="/cunjin-chain/chain#/lab">链浏览器 · 篡改实验室</a>，那里可以亲手改一笔链上金额再跑校验。</div>
       </div>
     </div>
   </div>`;
@@ -111,7 +111,7 @@ async function loadSamples() {
 async function ask(code) {
   const out = $('#out');
   lastCode = code;
-  history.replaceState(null, '', '/verify?code=' + encodeURIComponent(code));
+  history.replaceState(null, '', '/cunjin-chain/verify?code=' + encodeURIComponent(code));
   out.innerHTML = `<div class="card"><div class="card-b"><div class="row gap3">${skel(40, '40px')}
     <div class="grow">${skel(14, '60%')}<div class="mt3">${skel(12, '90%')}</div></div></div></div></div>
     <div class="card mt4"><div class="card-b">${skel(120)}</div></div>`;
@@ -235,7 +235,7 @@ function certCard(r, color) {
       <div class="grid g3 mt6" style="gap:14px">
         <div><div class="tiny dim2">持有人</div><div class="bold mt3">${esc(r.holder.nickname)}</div></div>
         <div><div class="tiny dim2">链上地址</div>
-          <div class="mt3"><a class="hash" href="/chain#/addr/${esc(r.holder.addr)}"
+          <div class="mt3"><a class="hash" href="/cunjin-chain/chain#/addr/${esc(r.holder.addr)}"
             title="${esc(r.holder.addr)}">${I('cube', 11)}${esc(shortHash(r.holder.addr, 10, 6))}</a></div></div>
         <div><div class="tiny dim2">序列号</div><div class="bold mono mt3">${esc(r.serial)}</div></div>
       </div>
@@ -254,13 +254,13 @@ function chainCard(r, local) {
   return `<div class="card">
     <div class="card-h">
       <h3>${I('cube', 15)} 链上明细</h3>
-      <a class="btn sm" href="/chain#/tx/${esc(c.txid)}" target="_blank" rel="noopener">${I('ext', 13)} 在链浏览器打开</a>
+      <a class="btn sm" href="/cunjin-chain/chain#/tx/${esc(c.txid)}" target="_blank" rel="noopener">${I('ext', 13)} 在链浏览器打开</a>
     </div>
     <div class="card-b">
       <div class="grid g2" style="gap:8px 26px">
         <dl>
           <div class="adm-kv"><dt>交易号</dt><dd class="mono" style="font-size:11.5px">
-            <a class="hash" href="/chain#/tx/${esc(c.txid)}">${shortHash(c.txid, 12, 8)}</a></dd></div>
+            <a class="hash" href="/cunjin-chain/chain#/tx/${esc(c.txid)}">${shortHash(c.txid, 12, 8)}</a></dd></div>
           <div class="adm-kv"><dt>交易类型</dt><dd>${esc(c.type)}</dd></div>
           <div class="adm-kv"><dt>铸造消耗积分</dt><dd>${n(c.amount)} 分（转入销毁账户）</dd></div>
           <div class="adm-kv"><dt>所在区块</dt><dd>#${c.height}</dd></div>

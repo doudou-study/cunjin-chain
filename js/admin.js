@@ -70,9 +70,9 @@ function paintGate(msg) {
       </div>
     </div>
     <div class="row gap3 mt5 small" style="justify-content:center">
-      <a href="/" style="color:var(--txt-3)">用户端</a>
-      <a href="/chain" style="color:var(--txt-3)">链浏览器</a>
-      <a href="/verify" style="color:var(--txt-3)">凭证验真</a>
+      <a href="/cunjin-chain/" style="color:var(--txt-3)">用户端</a>
+      <a href="/cunjin-chain/chain" style="color:var(--txt-3)">链浏览器</a>
+      <a href="/cunjin-chain/verify" style="color:var(--txt-3)">凭证验真</a>
     </div>
   </div>`;
 
@@ -236,7 +236,7 @@ async function viewOverview() {
         </dl>
         <div class="row gap2 mt4">
           <button class="btn sm" data-act="mine">${I('hammer', 13)} 立即出块</button>
-          <a class="btn sm" href="/chain" target="_blank" rel="noopener">${I('ext', 13)} 链浏览器</a>
+          <a class="btn sm" href="/cunjin-chain/chain" target="_blank" rel="noopener">${I('ext', 13)} 链浏览器</a>
         </div>
       </div>
     </div>
@@ -333,7 +333,7 @@ async function openUser(id) {
           <dl>
             <div class="adm-kv"><dt>用户 ID / 用户名</dt><dd>#${u.id} · @${esc(u.username)}</dd></div>
             <div class="adm-kv"><dt>链上地址</dt><dd class="mono" style="font-size:11.5px">
-              <a class="hash" href="/chain#/addr/${esc(u.addr)}" target="_blank" rel="noopener">${esc(u.addr)}</a></dd></div>
+              <a class="hash" href="/cunjin-chain/chain#/addr/${esc(u.addr)}" target="_blank" rel="noopener">${esc(u.addr)}</a></dd></div>
             <div class="adm-kv"><dt>链上余额 / 交易笔数</dt><dd class="num">${n(rec.chainBal)} 分 · ${n(u.tx_count)} 笔</dd></div>
             <div class="adm-kv"><dt>注册 / 最近登录</dt><dd>${dt(u.created_at)} · ${u.last_login ? dt(u.last_login) : '—'}</dd></div>
             <div class="adm-kv"><dt>等级</dt><dd>Lv.${u.level} · 经验 ${n(u.exp)}</dd></div>
@@ -467,7 +467,7 @@ async function viewRules() {
         </div>
         ${x.val_text ? `<div class="small dim mt3">阶梯：<span class="mono">${esc(x.val_text)}</span></div>` : ''}
         <div class="small dim2 mt3">规则键 <span class="mono">${esc(x.rule_key)}</span></div>
-        ${x.txid ? `<div class="mt3"><a class="hash" href="/chain#/tx/${esc(x.txid)}" target="_blank"
+        ${x.txid ? `<div class="mt3"><a class="hash" href="/cunjin-chain/chain#/tx/${esc(x.txid)}" target="_blank"
           rel="noopener">${I('cube', 11)}本版存证交易</a></div>` : ''}
       </div>
     </div>`).join('')}
@@ -653,7 +653,7 @@ async function viewOrders() {
             <th class="c">数量</th><th class="c">状态</th><th class="r">下单时间</th><th class="r">操作</th></tr></thead>
           <tbody>${r.list.map((x) => `<tr>
             <td><div class="t-main mono" style="font-size:12px">${esc(x.order_no)}</div>
-              <div class="t-sub">${x.txid ? `<a class="hash" href="/chain#/tx/${esc(x.txid)}" target="_blank"
+              <div class="t-sub">${x.txid ? `<a class="hash" href="/cunjin-chain/chain#/tx/${esc(x.txid)}" target="_blank"
                 rel="noopener">${shortHash(x.txid, 8, 5)}</a>` : '未上链'}</div></td>
             <td><div class="t-main small">${esc(x.nickname)}</div>
               <div class="t-sub mono">${shortHash(x.addr, 8, 5)}</div></td>
@@ -824,7 +824,7 @@ async function viewChain() {
       <div class="card-b" style="padding:0;max-height:300px;overflow:auto">
         <table class="tbl"><tbody>${r.accounts.map((a) => `<tr>
           <td><div class="t-main mono" style="font-size:12px">
-            <a class="hash" href="/chain#/addr/${esc(a.addr)}" target="_blank" rel="noopener">${esc(a.addr)}</a></div>
+            <a class="hash" href="/cunjin-chain/chain#/addr/${esc(a.addr)}" target="_blank" rel="noopener">${esc(a.addr)}</a></div>
             <div class="t-sub">${esc(a.label || '')}</div></td>
           <td class="r num"><b>${n(a.on_chain)}</b><div class="t-sub">交易 ${n(a.tx_count)} 笔</div></td>
         </tr>`).join('')}</tbody></table>
@@ -841,7 +841,7 @@ async function viewChain() {
           <thead><tr><th>交易号</th><th class="c">类型</th><th>付款方</th><th>收款方</th>
             <th class="r">金额</th><th>备注</th><th class="r">进入池子</th></tr></thead>
           <tbody>${r.pool.map((t) => `<tr>
-            <td><a class="hash" href="/chain#/tx/${esc(t.txid)}" target="_blank" rel="noopener">${shortHash(t.txid, 9, 6)}</a></td>
+            <td><a class="hash" href="/cunjin-chain/chain#/tx/${esc(t.txid)}" target="_blank" rel="noopener">${shortHash(t.txid, 9, 6)}</a></td>
             <td class="c"><span class="tag chain">${esc(t.typeCN || t.type)}</span></td>
             <td class="mono small">${esc(shortHash(t.from_addr, 8, 5))}</td>
             <td class="mono small">${esc(shortHash(t.to_addr, 8, 5))}</td>
@@ -1063,7 +1063,7 @@ async function viewAudit() {
             <td><div class="t-main small">${esc(x.nickname || '—')}</div>
               <div class="t-sub">${x.actor_role === 'admin' ? '管理员' : x.actor_role === 'operator' ? '运营' : esc(x.actor_role_name || '')}</div></td>
             <td class="c tiny mono dim">${esc(x.ip || '—')}</td>
-            <td>${x.txid ? `<a class="hash" href="/chain#/tx/${esc(x.txid)}" target="_blank"
+            <td>${x.txid ? `<a class="hash" href="/cunjin-chain/chain#/tx/${esc(x.txid)}" target="_blank"
               rel="noopener">${shortHash(x.txid, 8, 5)}</a>` : '<span class="dim2">—</span>'}</td>
             <td class="r tiny dim">${dt(x.created_at)}</td>
           </tr>`).join('')}</tbody>
@@ -1218,7 +1218,7 @@ const ROUTES = {
 function parseHash() {
   const raw = location.hash.replace(/^#\/?/, '') || 'overview';
   const [path, qs] = raw.split('?');
-  const seg = path.split('/');
+  const seg = path.split('/cunjin-chain/');
   const q = Object.fromEntries(new URLSearchParams(qs || ''));
   const tab = ROUTES[seg[0]] ? seg[0] : 'overview';
   // 换页签就清掉旧筛选条件（否则会出现「切到风控却还筛着上一页的状态」），

@@ -102,7 +102,7 @@ async function viewToday() {
             </div>
             <div class="col" style="align-items:center;gap:10px">
               ${C.ring(pct(t.done, t.total), { size: 124, stroke: 11, label: '今日任务',
-    big: t.done + '/' + t.total, unit: '', from: '#10B981', to: '#34D399' })}
+    big: t.done + '/cunjin-chain/' + t.total, unit: '', from: '#10B981', to: '#34D399' })}
               <div class="tiny dim2">${t.allClear ? '今天全清，干得漂亮' : `还差 ${t.total - t.done} 项就全清了`}</div>
             </div>
           </div>
@@ -845,7 +845,7 @@ async function viewMine() {
           <a class="btn block" href="#/ledger">${I('layers', 15)} 积分明细</a>
           <a class="btn block" href="#/badges">${I('trophy', 15)} 我的徽章</a>
           <a class="btn block" href="#/teams">${I('users', 15)} 我的自习室</a>
-          ${u.role !== 'user' ? `<a class="btn block soft" href="/admin">${I('cpu', 15)} 进入运营管理端</a>` : ''}
+          ${u.role !== 'user' ? `<a class="btn block soft" href="/cunjin-chain/admin">${I('cpu', 15)} 进入运营管理端</a>` : ''}
           <button class="btn block danger" data-act="logout">${I('logout', 15)} 退出登录</button>
         </div>
       </div>
@@ -1198,7 +1198,7 @@ function paintNav() {
   ];
   $('#navlink').innerHTML = links.map(([h, t]) =>
     `<a href="${h}" class="${location.hash.startsWith(h) ? 'on' : ''}">${t}</a>`).join('')
-    + `<a href="/chain" target="_blank">链浏览器 ${I('ext', 12)}</a>`;
+    + `<a href="/cunjin-chain/chain" target="_blank">链浏览器 ${I('ext', 12)}</a>`;
   $('#uchip').innerHTML = u
     ? `<div class="uchip" data-act="goMine">
         <span class="ava">${esc(u.nickname.slice(0, 2))}</span>
@@ -1223,16 +1223,16 @@ const ROUTES = {
   mine: () => viewMine(),
   reconcile: () => viewReconcile(),
   // 链上跳转：直接用链浏览器页面打开详情
-  block: (q, id) => { location.href = '/chain#/block/' + id; },
-  tx: (q, id) => { location.href = '/chain#/tx/' + id; },
-  addr: (q, id) => { location.href = '/chain#/addr/' + id; },
-  verify: (q) => { location.href = '/verify' + (q.code ? '?code=' + q.code : ''); },
+  block: (q, id) => { location.href = '/cunjin-chain/chain#/block/' + id; },
+  tx: (q, id) => { location.href = '/cunjin-chain/chain#/tx/' + id; },
+  addr: (q, id) => { location.href = '/cunjin-chain/chain#/addr/' + id; },
+  verify: (q) => { location.href = '/cunjin-chain/verify' + (q.code ? '?code=' + q.code : ''); },
 };
 
 async function route() {
   const raw = location.hash.replace(/^#\/?/, '') || 'today';
   const [path, qs2] = raw.split('?');
-  const seg = path.split('/');
+  const seg = path.split('/cunjin-chain/');
   const q = Object.fromEntries(new URLSearchParams(qs2 || ''));
   const root = $('#view');
   root.scrollIntoView({ block: 'start' });

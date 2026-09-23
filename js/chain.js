@@ -493,7 +493,7 @@ async function viewAddr(addr) {
               <div class="tiny dim2 mono">${esc(c.serial)} · ${esc(c.verify_code)}</div></div>
             <div class="row gap2">
               <span class="tag ${c.status === 'valid' ? 'ok' : 'bad'}">${c.status === 'valid' ? '有效' : '已撤销'}</span>
-              <a class="btn sm ghost" href="/verify?code=${esc(c.verify_code)}" target="_blank">${I('scan', 12)}</a>
+              <a class="btn sm ghost" href="/cunjin-chain/verify?code=${esc(c.verify_code)}" target="_blank">${I('scan', 12)}</a>
             </div></div>`).join('')}
         </div></div>` : ''}
       ${r.user ? `<div class="card pad">
@@ -524,7 +524,7 @@ async function viewPool() {
   </div>
   ${canOps ? '' : `<div class="alert info mb5">${I('info', 15)}
     <div>手动出块和调难度需要「运营」或「管理员」权限。用 <b class="mono">ops_lin / 123456</b>
-      到<a href="/">用户端</a>登录后再回来。</div></div>`}
+      到<a href="/cunjin-chain/">用户端</a>登录后再回来。</div></div>`}
 
   <div class="grid g-2-1 mb5">
     <div class="card">
@@ -724,12 +724,12 @@ function paintNav() {
     ['#/pool', '交易池'], ['#/validate', '全链校验'], ['#/lab', '篡改实验室']];
   $('#navlink').innerHTML = links.map(([h, t]) =>
     `<a href="${h}" class="${location.hash === h || (h !== '#/' && location.hash.startsWith(h)) ? 'on' : ''}">${t}</a>`).join('')
-    + `<a href="/" >用户端 ${I('ext', 12)}</a>`;
+    + `<a href="/cunjin-chain/" >用户端 ${I('ext', 12)}</a>`;
   $('#uchip').innerHTML = S.user
-    ? `<a class="uchip" href="/"><span class="ava">${esc(S.user.nickname.slice(0, 2))}</span>
+    ? `<a class="uchip" href="/cunjin-chain/"><span class="ava">${esc(S.user.nickname.slice(0, 2))}</span>
         <div style="line-height:1.25"><div class="bold small">${esc(S.user.nickname)}</div>
         <div class="tiny dim2">回到用户端</div></div></a>`
-    : `<a class="btn sm" href="/">去登录 / 注册</a>`;
+    : `<a class="btn sm" href="/cunjin-chain/">去登录 / 注册</a>`;
 }
 
 const ROUTES = {
@@ -748,7 +748,7 @@ const ROUTES = {
 async function route() {
   const raw = location.hash.replace(/^#\/?/, '') || '';
   const [path, qs2] = raw.split('?');
-  const seg = path.split('/');
+  const seg = path.split('/cunjin-chain/');
   const q = Object.fromEntries(new URLSearchParams(qs2 || ''));
   paintNav();
   const fn = ROUTES[seg[0]];
